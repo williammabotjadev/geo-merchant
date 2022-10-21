@@ -12,7 +12,7 @@ import Link from '@material-ui/core/Link'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import logoImage from '../img/geo-merchant-logo.png'
-import bgImage from '../img/the-nix.jpg'
+import bgImage from '../img/landing.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,9 +37,14 @@ const Landing: React.FunctionComponent = () => {
   }
 
   return (
-    <Grid container style={{
+    <Grid style={{
       backgroundImage: `url(${bgImage})`,
       backgroundBlendMode: "multiply",
+      top: 0,
+      left: 0,
+      position: "relative",
+      width: "100%",
+      height: "100%",
     }}>
       <Grid className={classes.root} container direction="column" justify="center" alignItems="center">
         <Box m={2}>
