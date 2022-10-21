@@ -13,6 +13,7 @@ import { useValidPassword, useValidUsername } from '../../hooks/useAuthHooks'
 import { Password, Username } from '../../components/authComponents'
 
 import { AuthContext } from '../../contexts/authContext'
+import bgImage from '../../img/jezael.jpg'
 
 const useStyles = makeStyles({
   root: {
@@ -54,23 +55,32 @@ const SignIn: React.FunctionComponent<{}> = () => {
   }
 
   return (
-    <Grid className={classes.root} container direction="row" justify="center" alignItems="center">
-      <Grid xs={11} sm={6} lg={4} container direction="row" justify="center" alignItems="center" item>
+    <Box component="div" style={{
+      backgroundImage: `url(${bgImage})`,
+    }}>
+    <Grid className={classes.root} container direction="row" justify="flex-start" alignItems="flex-start" style={{
+      height: "100vh",
+      marginTop: "200px",
+      marginLeft: "200px",
+    }}>
+      <Grid xs={11} sm={6} lg={4} container direction="row" justify="flex-start" alignItems="flex-start" item style={{
+        height: "100%"
+      }}>
         <Paper style={{ width: '100%', padding: 32 }}>
-          <Grid container direction="column" justify="center" alignItems="center">
+          <Grid container direction="column" justify="flex-start" alignItems="flex-start">
             {/* Title */}
             <Box m={2}>
               <Typography variant="h3">Sign in</Typography>
             </Box>
 
             {/* Sign In Form */}
-            <Box width="80%" m={1}>
+            <Box width="100%" m={1}>
               {/* <Email emailIsValid={emailIsValid} setEmail={setEmail} /> */}
               <Username usernameIsValid={usernameIsValid} setUsername={setUsername} />{' '}
             </Box>
-            <Box width="80%" m={1}>
+            <Box width="100%" m={1}>
               <Password label="Password" passwordIsValid={passwordIsValid} setPassword={setPassword} />
-              <Grid container direction="row" justify="flex-start" alignItems="center">
+              <Grid container direction="row" justify="flex-start" alignItems="flex-start">
                 <Box onClick={passwordResetClicked} mt={2}>
                   <Typography className={classes.hover} variant="body2">
                     Forgot Password?
@@ -88,7 +98,7 @@ const SignIn: React.FunctionComponent<{}> = () => {
 
             {/* Buttons */}
             <Box mt={2}>
-              <Grid container direction="row" justify="center">
+              <Grid container direction="row" justify="flex-start">
                 <Box m={1}>
                   <Button color="secondary" variant="contained" onClick={() => history.goBack()}>
                     Cancel
@@ -112,6 +122,7 @@ const SignIn: React.FunctionComponent<{}> = () => {
         </Paper>
       </Grid>
     </Grid>
+    </Box>
   )
 }
 
