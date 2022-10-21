@@ -14,6 +14,8 @@ import { Email, Password, Username } from '../../components/authComponents'
 
 import { AuthContext } from '../../contexts/authContext'
 
+import bgImage from '../../img/bruno.jpg'
+
 const useStyles = makeStyles({
   root: {
     height: '100vh',
@@ -62,18 +64,43 @@ const SignUp: React.FunctionComponent<{}> = () => {
 
   const signUp = (
     <>
-      <Box width="80%" m={1}>
+    <Box component="div" style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      flexDirection: 'row',
+      width: '100%',
+     
+    }}>
+      <Box component="div" style={{
+        width: "50%",
+        padding: '20px'
+      }}>
+      <Box width="100%" style={{
+        width: "384px",
+      }}>
         <Email emailIsValid={emailIsValid} setEmail={setEmail} />
       </Box>
-      <Box width="80%" m={1}>
+      <br />
+      <Box width="100%" style={{
+        width: "384px",
+      }}>
         <Username usernameIsValid={usernameIsValid} setUsername={setUsername} />
       </Box>
-      <Box width="80%" m={1}>
+      <br />
+      <Box width="100%" style={{
+        width: "384px",
+      }}>
         <Password label="Password" passwordIsValid={passwordIsValid} setPassword={setPassword} />
       </Box>
-      <Box width="80%" m={1}>
+      <br />
+      <Box width="100%" style={{
+        width: "384px",
+      }}>
         <Password label="Confirm Password" passwordIsValid={passwordConfirmIsValid} setPassword={setPasswordConfirm} />
       </Box>
+      <br />
       <Box mt={2}>
         <Typography color="error" variant="body2">
           {error}
@@ -81,7 +108,9 @@ const SignUp: React.FunctionComponent<{}> = () => {
       </Box>
 
       {/* Buttons */}
-      <Box mt={2}>
+      <Box mt={2} style={{
+        padding: "20px"
+      }}>
         <Grid container direction="row" justify="center">
           <Box m={1}>
             <Button onClick={() => history.goBack()} color="secondary" variant="contained">
@@ -95,6 +124,13 @@ const SignUp: React.FunctionComponent<{}> = () => {
           </Box>
         </Grid>
       </Box>
+      </Box>
+      <Box style={{
+        width: "50%",
+      }}>
+        
+        </Box>
+    </Box>
     </>
   )
 
@@ -112,13 +148,15 @@ const SignUp: React.FunctionComponent<{}> = () => {
   )
 
   return (
-    <Grid className={classes.root} container direction="row" justify="center" alignItems="center">
-      <Grid xs={11} sm={6} lg={4} container direction="row" justify="center" alignItems="center" item>
+    <Grid className={classes.root} container direction="row" justify="flex-start" alignItems="flex-start" style={{
+      backgroundImage: `url(${bgImage})`,
+    }}>
+      <Grid xs={11} sm={6} lg={4} container direction="row" justify="flex-start" alignItems="flex-start" item>
         <Paper style={{ width: '100%', padding: 16 }}>
-          <Grid container direction="column" justify="center" alignItems="center">
+          <Grid container direction="column" justify="flex-start" alignItems="flex-start">
             {/* Title */}
             <Box m={3}>
-              <Grid container direction="row" justify="center" alignItems="center">
+              <Grid container direction="row" justify="flex-start" alignItems="flex-start">
                 <Typography variant="h3">Sign Up</Typography>
               </Grid>
             </Box>

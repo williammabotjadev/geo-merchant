@@ -79,7 +79,7 @@ const Landing: React.FunctionComponent = () => {
           }}>
             SIGN IN
           </Button>
-          <Button onClick={signIn} variant="contained" color="primary" style={{
+          <Button onClick={signUp} variant="contained" color="primary" style={{
             margin: '40px',
             padding: '20px',
             width: '200px',
