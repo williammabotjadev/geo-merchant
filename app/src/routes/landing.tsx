@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Link from '@material-ui/core/Link'
-import GitHubIcon from '@material-ui/icons/GitHub'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import logoImage from '../img/geo-merchant-logo.png'
 
@@ -45,7 +45,7 @@ const Landing: React.FunctionComponent = () => {
         
             <Grid container direction="row" justify="center" alignItems="center">
               <Box mr={3}>
-                <GitHubIcon fontSize="large" />
+                <ShoppingCartIcon fontSize="large" />
               </Box>
               <Typography className={classes.title} variant="h3">
                 Geo Enabled Retail Insights
