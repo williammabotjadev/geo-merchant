@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button'
 import Link from '@material-ui/core/Link'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
-import logoImage from './logo.png'
+import logoImage from '../img/geo-merchant-logo.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +31,10 @@ const Landing: React.FunctionComponent = () => {
     history.push('/signin')
   }
 
+  const signUp = () => {
+    history.push('/signup')
+  }
+
   return (
     <Grid container>
       <Grid className={classes.root} container direction="column" justify="center" alignItems="center">
@@ -38,20 +42,41 @@ const Landing: React.FunctionComponent = () => {
           <img src={logoImage} width={224} height={224} alt="logo" />
         </Box>
         <Box m={2}>
-          <Link underline="none" color="inherit" href="https://github.com/dbroadhurst/aws-cognito-react">
+        
             <Grid container direction="row" justify="center" alignItems="center">
               <Box mr={3}>
                 <GitHubIcon fontSize="large" />
               </Box>
               <Typography className={classes.title} variant="h3">
-                AWS Cognito Starter
+                Geo Enabled Retail Insights
               </Typography>
             </Grid>
-          </Link>
+          
         </Box>
-        <Box m={2}>
-          <Button onClick={signIn} variant="contained" color="primary">
+        <Box style={{
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '40px',
+          margin: '20px'
+        }}>
+          <Button onClick={signIn} variant="contained" color="primary" style={{
+            margin: '40px',
+            padding: '20px',
+            width: '200px',
+            height: '100px'
+          }}>
             SIGN IN
+          </Button>
+          <Button onClick={signIn} variant="contained" color="primary" style={{
+            margin: '40px',
+            padding: '20px',
+            width: '200px',
+            height: '100px'
+          }}>
+            GET STARTED
           </Button>
         </Box>
       </Grid>
