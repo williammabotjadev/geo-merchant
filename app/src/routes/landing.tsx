@@ -83,7 +83,8 @@ const Landing: React.FunctionComponent = () => {
             margin: '40px',
             padding: '20px',
             width: '200px',
-            height: '100px'
+            height: '100px',
+            backgroundColor: 'green'
           }}>
             GET STARTED
           </Button>
